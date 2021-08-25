@@ -27,7 +27,7 @@ const setupQuiz = () => {
   let buttonIndex = 0;
   while(buttonIndex < buttonLength) {
     $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
-    buttonLength++;
+    buttonIndex++;
   }
 } 
 setupQuiz();
@@ -54,8 +54,8 @@ const clickHandler = (e) => {
 // ボタンをクリックしたら正誤判定
 let handleIndex = 0;
 while(handleIndex < buttonLength) {
-  $button[0].addEventListener('click', (e) => {
-    clickHandler = (e);
+  $button[handleIndex].addEventListener('click', (e) => {
+    clickHandler(e);
   });
   handleIndex++;
 }
